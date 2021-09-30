@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LaptopPricesGUI"
         mc:Ignorable="d"
-        Title="Laptop price predictor" Height="507" Width="800" ResizeMode="CanMinimize">
+        Title="Laptop price predictor" Height="593" Width="842" ResizeMode="CanMinimize">
     <Grid Height="534">
         <Label x:Name="lblCPULabel" Content="CPU" HorizontalAlignment="Left" Margin="27,18,0,0" VerticalAlignment="Top"
                FontWeight="Bold" FontSize="24" />
