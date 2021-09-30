@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0-windows7.0": {
       "LightGBM/2.3.1": {
         "type": "package",
         "build": {
@@ -1622,6 +1622,20 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
+        }
+      },
+      "MLModel1_ConsoleApp1/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "Microsoft.ML": "1.6.0",
+          "Microsoft.ML.LightGbm": "1.6.0"
+        },
+        "compile": {
+          "bin/placeholder/MLModel1_ConsoleApp1.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MLModel1_ConsoleApp1.dll": {}
         }
       }
     }
@@ -5606,10 +5620,16 @@
         "system.xml.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xmldocument.nuspec"
       ]
+    },
+    "MLModel1_ConsoleApp1/1.0.0": {
+      "type": "project",
+      "path": "../MLModel1_ConsoleApp1/MLModel1_ConsoleApp1.csproj",
+      "msbuildProject": "../MLModel1_ConsoleApp1/MLModel1_ConsoleApp1.csproj"
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0-windows7.0": [
+      "MLModel1_ConsoleApp1 >= 1.0.0",
       "Microsoft.ML >= 1.6.0",
       "Microsoft.ML.LightGbm >= 1.6.0"
     ]
@@ -5638,16 +5658,20 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+        "net5.0-windows7.0": {
+          "targetAlias": "netcoreapp5.0-windows",
+          "projectReferences": {
+            "D:\\Users\\manol\\Documents\\Visual Studio 2019\\Projects\\MLNET1\\Section_1_LaptopPricePrediction\\Src_1_3\\MLModel1_ConsoleApp1\\MLModel1_ConsoleApp1.csproj": {
+              "projectPath": "D:\\Users\\manol\\Documents\\Visual Studio 2019\\Projects\\MLNET1\\Section_1_LaptopPricePrediction\\Src_1_3\\MLModel1_ConsoleApp1\\MLModel1_ConsoleApp1.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5657,8 +5681,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0-windows7.0": {
+        "targetAlias": "netcoreapp5.0-windows",
         "dependencies": {
           "Microsoft.ML": {
             "target": "Package",

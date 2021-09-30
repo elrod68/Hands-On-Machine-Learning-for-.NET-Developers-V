@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using static LaptopPricesGUI.MLModel1;
 
 namespace LaptopPricesGUI
 {
@@ -44,23 +45,37 @@ namespace LaptopPricesGUI
 
         private void btnPredictPrice_Click(object sender, RoutedEventArgs e)
         {
-            var predictedPrice = PredictPrice(cboCPU1.Text, sldSpeed.Value, cboGPU.Text, cboRAMType.Text, sldRAM.Value,
-                sldScreenSize.Value, sldStorage.Value, chkIsSSD.IsChecked.Value, sldWeight.Value);
+            var predictedPrice = PredictPrice(cboCPU1.Text,(float) sldSpeed.Value, cboGPU.Text, cboRAMType.Text, (float) sldRAM.Value,
+                (float) sldScreenSize.Value, (float) sldStorage.Value, chkIsSSD.IsChecked.Value, (float) sldWeight.Value);
             
             lblPrice.Content = $"{predictedPrice}";
         }
 
         private float PredictPrice(string CPU, 
-            double GHz, 
+            float GHz, 
             string GPU, 
             string RAMType, 
-            double RAMAmount,
-            double screenSize, 
-            double storage, 
+            float RAMAmount,
+            float screenSize, 
+            float storage, 
             bool isSSD, 
-            double weight)
+            float weight)
         {
-            return 0;
+            ModelInput input = new ModelInput()
+            {
+                CPU = CPU,
+                GHz = GHz,
+                GPU = GPU,
+                RAM = RAMAmount,
+                RAMType = RAMType,
+                Screen = screenSize,
+                Storage = storage,
+                SSD = isSSD,
+                Weight = weight,
+            };
+
+            ModelOutput result = Predict(input);
+            return result.Score;
         }
     }
 }
